@@ -1,0 +1,18 @@
+/* VIEWPORTS */
+@custom-media --viewport-tablet (width >= 48rem); /*768 px*/
+@custom-media --viewport-desktop (width >= 64rem); /*1024 px*/
+
+
+
+/*Landing colors*/
+
+:root {
+  --main-color-darkest: #1F3F68;
+  --main-color-dark: #316099;
+  --main-color: #356EAD;
+  --main-color-light: #5A98D0;
+  --main-color-lightest: #98C3E8;
+  --color-white: #ffffff;
+}
+
+

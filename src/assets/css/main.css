@@ -1,0 +1,7 @@
+body, html {
+  background-color: darkgray;
+
+  p {
+    font-size: 60px;
+  }
+}

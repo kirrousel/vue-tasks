@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  min-width: 220px;
+  height: 56px;
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  background: var(--main-color-light);
+  box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+  border-radius: 10px;
+  transition: .3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

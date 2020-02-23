@@ -23,8 +23,11 @@ body, html {
 .wrapper {
   display: block;
   width: 100%;
-  max-width: 1366px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
+.wrapper--header {
+  max-width: 1366px;
+}

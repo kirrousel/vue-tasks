@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header__wrapper wrapper">
+    <div class="header__wrapper wrapper wrapper--header">
       <div class="header__content">
         <div class="header__box header__box--logo">
           <img class="header__logo" src="/logo.svg" alt="logo">
@@ -25,10 +25,12 @@
   .header {
     position: sticky;
     top: 0;
+    background-color: var(--color-white);
   }
 
   .header__content {
     display: flex;
+    align-items: center;
 
   }
 

@@ -59,7 +59,7 @@
 
   .landing-advantages-item__title {
     margin-bottom: 16px;
-    font-size: 2rem;
+    font-size: 1.25rem;
     line-height: 1.5;
     font-weight: 500;
     color: var(--main-color-darkest);
@@ -67,7 +67,7 @@
 
   .landing-advantages-item__text {
     margin-bottom: 32px;
-    font-size: 1.6rem;
+    font-size: 1rem;
     line-height: 1.625;
     letter-spacing: 0.05em;
     color: var(--main-color-darkest);
@@ -78,7 +78,7 @@
     position: relative;
     padding-right: 48px;
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 0.875rem;
     line-height: 2.2;
     color: var(--main-color-light);
     font-weight: 500;

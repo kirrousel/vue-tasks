@@ -48,7 +48,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 3.6rem;
+    font-size: 2.25rem;
     line-height: 1.3;
     color: var(--main-color-dark);
     font-weight: 500;

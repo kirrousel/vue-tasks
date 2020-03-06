@@ -26,6 +26,7 @@
     position: sticky;
     top: 0;
     background-color: var(--color-white);
+    z-index: 99;
   }
 
   .header__content {

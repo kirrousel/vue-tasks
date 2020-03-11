@@ -10,12 +10,14 @@
 </template>
 
 <style>
+#app {
+ height: 100%;
+}
 #nav {
-  padding: 30px 15px;
+  padding: 10px 15px;
   text-align: center;
-  margin-bottom: 15px;
-  box-shadow: 0 0 15px 0 rgba(0,0,0,.2);
   box-sizing: border-box;
+  border-bottom: 1px solid #F5f5f5;
 
   a {
     font-weight: bold;

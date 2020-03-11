@@ -20,7 +20,7 @@
 <style scoped>
   .landing-hero {
     height: 100%;
-    min-height: calc(100vh - 144px); /*headers*/
+    min-height: calc(100vh - 89px); /*headers*/
     background: linear-gradient(0deg, rgba(152, 195,232, 0.2) 8.84%, rgba(152, 195, 232, 0) 31.12%);
 
     @media (--viewport-tablet) {

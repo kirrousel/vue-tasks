@@ -72,23 +72,35 @@
   }
 
   .projects__item {
+    margin-bottom: 50px;
     width: 100%;
-    max-width: 422px;
     height: 417px;
     background: #E8E8E8;
     border-radius: 10px;
     overflow: hidden;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 0;
+      width: 49%;
+      max-width: 422px;
+    }
+
   }
 
   .projects__item--full {
-    margin-bottom: 96px;
+    margin-bottom: 50px;
     max-width: 100%;
+    width: 100%;
 
-    .projects__content {
-      top: 48px;
-      right: 48px;
-      left: auto;
-      text-align: right;
+    @media (--viewport-tablet) {
+      margin-bottom: 96px;
+
+      .projects__content {
+        top: 48px;
+        right: 48px;
+        left: auto;
+        text-align: right;
+      }
     }
   }
 
@@ -135,7 +147,6 @@
   .projects__description {
     font-size: 1rem;
     line-height: 2.875;
-
   }
 
 </style>

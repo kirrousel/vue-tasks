@@ -12,10 +12,14 @@
 </script>
 <style scoped>
   .section-header {
-    margin-bottom: 96px;
-    display: flex;
+    margin-bottom: 50px;
     color: var(--main-color-darkest);
     letter-spacing: 0.05em;
+
+    @media (--viewport-tablet) {
+      display: flex;
+      margin-bottom: 96px;
+    }
   }
 
   .section-header--light {
@@ -23,10 +27,15 @@
   }
 
   .section-header__title {
+    margin-bottom: 50px;
     flex-shrink: 0;
-    margin-right: 93px;
     max-width: 239px;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
+
+    @media (--viewport-tablet) {
+      margin-right: 93px;
+      font-size: 2.25rem;
+    }
   }
 
   .section-header__text {

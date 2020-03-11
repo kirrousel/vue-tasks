@@ -4,11 +4,13 @@
       <div class="landing-advantages__content">
         <div class="landing-advantages__box">
           <h2 class="landing-advantages__title">What we do to help our client grow in digital era</h2>
-          <LandingAdvantagesItem
-            img="business"
-            title="Make Your business To Be Better Famous In Internet"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
+          <div class="landing-advantages__item">
+            <LandingAdvantagesItem
+              img="business"
+              title="Make Your business To Be Better Famous In Internet"
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+          </div>
         </div>
         <div class="landing-advantages__box">
           <div class="landing-advantages__item">
@@ -41,30 +43,44 @@
 
 <style scoped>
   .landing-advantages__content {
-    display: flex;
+    @media (--viewport-tablet) {
+      display: flex;
+    }
   }
 
   .landing-advantages__title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 2.25rem;
+    margin-bottom: 50px;
+    font-size: 1.75rem;
     line-height: 1.3;
     color: var(--main-color-dark);
     font-weight: 500;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 2.25rem;
+    }
+
   }
 
   .landing-advantages__box {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    width: 50%;
+
+
+    @media (--viewport-tablet) {
+      width: 50%;
+      align-items: flex-end;
+    }
   }
 
   .landing-advantages__item {
-    &:first-child {
+    &:first-of-type {
       margin-bottom: 100px;
     }
   }

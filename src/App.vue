@@ -11,10 +11,11 @@
 
 <style>
 #nav {
-  padding: 30px;
+  padding: 30px 15px;
   text-align: center;
   margin-bottom: 15px;
   box-shadow: 0 0 15px 0 rgba(0,0,0,.2);
+  box-sizing: border-box;
 
   a {
     font-weight: bold;

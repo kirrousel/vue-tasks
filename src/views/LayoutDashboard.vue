@@ -21,10 +21,11 @@ export default {
 <style scoped>
 
   .layout {
+    display: flex;
     height: calc(100% - 39px);
   }
   .content {
-    padding-left: 256px;
+    flex-grow: 1;
     background-color: #F5F6F8;
     height: 100%;
     min-height: 100%;

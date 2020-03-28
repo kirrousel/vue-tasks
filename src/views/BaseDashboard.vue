@@ -19,7 +19,17 @@
           </div>
         </div>
         <div class="dashboard__item">
-          <div class="dashboard__box"></div>
+          <div class="dashboard__box">
+            <div class="dashboard__header">
+              <p class="dashboard__title">Tasks</p>
+              <div class="dashboard__select">
+                <DashboardSelect/>
+              </div>
+            </div>
+            <div class="dashboard__chart">
+              <DashboardPieChart/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -27,10 +37,11 @@
 </template>
 
 <script>
-  import DashboardLineChart from '../components/dashboard/DashboardLineChart.vue';
+  import DashboardLineChart from '../components/dashboard/charts/DashboardLineChart.vue';
+  import DashboardPieChart from '../components/dashboard/charts/DashboardPieChart.vue';
   import DashboardSelect from '../components/dashboard/DashboardSelect.vue';
   export default {
-    components: {DashboardLineChart, DashboardSelect},
+    components: { DashboardLineChart, DashboardSelect, DashboardPieChart },
   }
 
 
@@ -39,7 +50,7 @@
 <style>
   .dashboard {
     height: calc(100% - 60px);
-    padding: 35px;
+    padding: 15px 35px;
     box-sizing: border-box;
   }
 
@@ -62,13 +73,13 @@
   .dashboard__section--small {
     display: flex;
     flex-direction: column;
-    margin: -15px 0;
+    margin: -5px 0;
   }
 
   .dashboard__item {
     min-height: 270px;
     height: 50%;
-    padding: 15px 0;
+    padding: 5px 0;
     box-sizing: border-box;
   }
 
@@ -97,5 +108,7 @@
 
   .dashboard__chart {
     padding: 16px 24px;
+    height:  calc(100% - 55px);
+    box-sizing: border-box;
   }
 </style>

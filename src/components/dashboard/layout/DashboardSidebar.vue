@@ -100,8 +100,8 @@
 
 <style scoped>
   .sidebar {
+    flex-shrink: 0;
     display: flex;
-    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     flex-direction: column;
@@ -111,6 +111,9 @@
     box-shadow: 6px 18px 18px rgba(0, 0, 0, 0.06);
     animation: open .3s ease;
     z-index: 1;
+    height: calc(100%);
+    min-height: calc(100%);
+    height: auto !important;
   }
 
   .sidebar--collapsed {

@@ -2,17 +2,21 @@
   <div class="dashboard">
     <div class="dashboard__content">
       <div class="dashboard__section dashboard__section--big">
-        <div class="dashboard__box"></div>
+        <div class="dashboard__box">
+          <DashboardSectionHeader
+            class="dashboard-section-header--extended"
+            is-extended="true"
+          />
+          <div class="dashboard__tasks">
+            <DashboardTaskList/>
+          </div>
+        </div>
       </div>
+
       <div class="dashboard__section dashboard__section--small">
         <div class="dashboard__item">
           <div class="dashboard__box">
-            <div class="dashboard__header">
-              <p class="dashboard__title">Deals</p>
-              <div class="dashboard__select">
-                <DashboardSelect/>
-              </div>
-            </div>
+            <DashboardSectionHeader/>
             <div class="dashboard__chart">
               <DashboardLineChart/>
             </div>
@@ -20,12 +24,7 @@
         </div>
         <div class="dashboard__item">
           <div class="dashboard__box">
-            <div class="dashboard__header">
-              <p class="dashboard__title">Tasks</p>
-              <div class="dashboard__select">
-                <DashboardSelect/>
-              </div>
-            </div>
+            <DashboardSectionHeader/>
             <div class="dashboard__chart">
               <DashboardPieChart/>
             </div>
@@ -39,9 +38,11 @@
 <script>
   import DashboardLineChart from '../components/dashboard/charts/DashboardLineChart.vue';
   import DashboardPieChart from '../components/dashboard/charts/DashboardPieChart.vue';
-  import DashboardSelect from '../components/dashboard/DashboardSelect.vue';
+  import DashboardSectionHeader from "../components/dashboard/layout/DashboardSectionHeader.vue";
+  import DashboardTaskList from "../components/dashboard/tasks/DashboardTaskList.vue";
+
   export default {
-    components: { DashboardLineChart, DashboardSelect, DashboardPieChart },
+    components: { DashboardSectionHeader, DashboardLineChart, DashboardPieChart, DashboardTaskList },
   }
 
 
@@ -50,6 +51,7 @@
 <style>
   .dashboard {
     height: calc(100% - 60px);
+    width: 100%;
     padding: 15px 35px;
     box-sizing: border-box;
   }
@@ -88,22 +90,6 @@
     background-color: var(--color-white);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     border-radius: 4px;
-  }
-
-  .dashboard__header{
-    display: flex;
-    align-items: center;
-    padding: 16px 24px;
-    border-bottom: 1px solid #EBEFF2;
-  }
-
-  .dashboard__title {
-    flex-grow: 1;
-    color: #192A3E;
-    font-size: 0.9375rem;
-    letter-spacing: 0.01em;
-    line-height: 1.5;
-    font-weight: 500;
   }
 
   .dashboard__chart {

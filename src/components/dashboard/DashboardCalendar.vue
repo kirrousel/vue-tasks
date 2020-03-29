@@ -20,12 +20,12 @@
       return {
         days: [
           {title: 'Sun', number: '23', hasEvents: true},
-          {title: 'Mon', number: '23', isCurrent: true},
-          {title: 'Tue', number: '23'},
-          {title: 'Wed', number: '23'},
-          {title: 'Thu', number: '23'},
-          {title: 'Fri', number: '23'},
-          {title: 'Sat', number: '23'}
+          {title: 'Mon', number: '24', isCurrent: true},
+          {title: 'Tue', number: '25'},
+          {title: 'Wed', number: '26'},
+          {title: 'Thu', number: '27'},
+          {title: 'Fri', number: '28'},
+          {title: 'Sat', number: '29'}
         ]
       }
     }
@@ -40,7 +40,11 @@
   .dashboard-calendar__list {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 -24px;
+    margin: 0 -2px;
+
+    @media (--viewport-tablet) {
+      margin: 0 -24px;
+    }
   }
 
   .dashboard-calendar__day {
@@ -49,10 +53,14 @@
     flex-grow: 1;
     align-items: center;
     width: 14.285714286%;
-    padding: 5px 24px;
+    padding: 5px 2px;
     text-align: center;
     box-sizing: border-box;
     cursor: pointer;
+
+    @media (--viewport-tablet) {
+      padding: 5px 24px;
+    }
   }
 
   .dashboard-calendar__day--current {

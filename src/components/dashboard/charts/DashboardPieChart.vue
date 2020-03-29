@@ -30,12 +30,25 @@
     --chart-color-ended: #F7685B;
     display: flex;
     align-items: center;
-    margin: 0 -22px;
+    justify-content: center;
+    margin: 0 -10px;
     height: 100%;
+
+    @media (--viewport-tablet) {
+      margin: 0 -22px;
+    }
+
+    @media (--viewport-desktop) {
+      justify-content: flex-start;
+    }
   }
   .pie-chart__box {
-    padding: 0 22px;
+    padding: 0 10px;
     box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      padding: 0 22px;
+    }
   }
 
   .pie-chart__box--chart {
@@ -43,10 +56,15 @@
 
   .pie-chart__value {
     position: relative;
-    height:  218px;
-    width: 218px;
+    height:  170px;
+    width: 170px;
     border-radius: 100%;
     overflow: hidden;
+
+    @media (--viewport-tablet) {
+      height:  218px;
+      width: 218px;
+    }
   }
 
   .pie-chart__segment {

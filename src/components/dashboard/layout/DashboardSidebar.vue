@@ -43,10 +43,12 @@
 <script>
   import DashboardUser from '../DashboardUser.vue';
   import DashboardNav from '../DashboardNav.vue';
+
   export default {
     components: {DashboardUser, DashboardNav},
     data() {
       return {
+        windowWidth: 0,
         isSidebarCollapsed: false,
         sidebarNavItems: [
           {
@@ -90,18 +92,39 @@
         ]
       }
     },
+    mounted() {
+      this.$nextTick(function() {
+        window.addEventListener('resize', this.getWindowWidth);
+
+        //Init
+        this.getWindowWidth();
+      })
+
+    },
+
     methods: {
+      getWindowWidth(event) {
+        this.windowWidth = document.documentElement.clientWidth;
+        console.log(this.windowWidth);
+        if(this.windowWidth <= 1024) {
+          this.isSidebarCollapsed = true;
+        }
+      },
+
       collapseSidebar() {
         this.isSidebarCollapsed = !this.isSidebarCollapsed;
       }
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize', this.getWindowWidth);
     }
   }
 </script>
 
 <style scoped>
   .sidebar {
+    display: none;
     flex-shrink: 0;
-    display: flex;
     overflow-x: hidden;
     overflow-y: auto;
     flex-direction: column;
@@ -114,6 +137,10 @@
     height: calc(100%);
     min-height: calc(100%);
     height: auto !important;
+
+    @media (--viewport-tablet) {
+      display: flex;
+    }
   }
 
   .sidebar--collapsed {

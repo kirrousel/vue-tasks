@@ -15,6 +15,12 @@
         </svg>
       </button>
     </div>
+
+    <div class="header__box header__box--menu">
+      <button type="button" class="header__button">
+        <i class="header__ico header__ico--menu"></i>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -27,12 +33,17 @@
 <style scoped>
   .header {
     display: flex;
+    width: 100%;
     align-items: center;
-    padding: 10px 35px;
+    padding: 10px 15px;
     height: 60px;
     background-color: var(--color-white);
-    box-sizing: border-box;
     border-bottom: 1px solid #EBEFF2;
+    box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      padding: 10px 35px;
+    }
   }
 
   .header__box {
@@ -81,6 +92,35 @@
     width: 16px;
     height: 20px;
     fill: var(--dashboard-grey-icon);
+  }
+
+  .header__box--menu {
+    @media (--viewport-tablet) {
+      display: none;
+    }
+  }
+
+  .header__ico--menu {
+    width: 20px;
+    height: 2px;
+    background-color: var(--dashboard-grey-icon);
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+    }
+
+    &:before {
+      top: -7px;
+    }
+
+    &:after {
+      bottom: -7px;
+    }
   }
 
 </style>

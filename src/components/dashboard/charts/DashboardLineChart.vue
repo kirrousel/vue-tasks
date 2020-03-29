@@ -88,5 +88,13 @@
 </script>
 
 <style scoped>
+  .line-chart {
+    width: 100%;
+    height: 100%;
+  }
 
+  #line-chart {
+   width: 100% !important;
+   height: 100% !important;
+  }
 </style>

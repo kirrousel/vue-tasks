@@ -18,8 +18,8 @@
             <span class="dashboard-task__name"> {{ task.name }} </span>
           </div>
         </div>
-        <div class="dashboard-task__item">
-          <div class="dashboard-task__controls"></div>
+        <div class="dashboard-task__item dashboard-task__item--actions">
+          <DashboardTaskActions/>
         </div>
         <div class="dashboard-task__item">
           <div
@@ -34,8 +34,11 @@
 </template>
 
 <script>
+  import DashboardTaskActions from "./DashboardTaskActions";
+
   export default {
     name: 'DashboardTask',
+    components: {DashboardTaskActions},
     props: ['task']
   }
 </script>
@@ -43,7 +46,7 @@
 
 <style scoped>
   .dashboard-task {
-    padding: 16px;
+    padding: 16px 10px;
     min-height: 120px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -51,8 +54,16 @@
     cursor: pointer;
     box-sizing: border-box;
 
+    @media (--viewport-tablet) {
+      padding: 16px;
+    }
+
     &:hover {
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.14);
+
+      .dashboard-task__item--actions {
+        display: flex;
+      }
     }
 
     .dashboard-task__header {
@@ -64,10 +75,14 @@
       padding-right: 10px;
       flex-grow: 1;
       color: #192A3E;
-      font-size: 0.9375rem;
+      font-size: 0.8125rem;
       letter-spacing: 0.01em;
       line-height: 1.5;
       font-weight: 500;
+
+      @media (--viewport-tablet) {
+        font-size: 0.9375rem;
+      }
     }
 
     .dashboard-task__type {
@@ -88,12 +103,22 @@
 
     .dashboard-task__actions {
       display: flex;
+      margin: 0 -6px;
+    }
+
+    .dashboard-task__item {
+      padding: 0 6px;
+      box-sizing: border-box;
     }
 
     .dashboard-task__item--assignee {
       flex-grow: 1;
       display: flex;
       align-items: center;
+    }
+
+    .dashboard-task__item--actions {
+      display: none;
     }
 
     .dashboard-task__assignee {
@@ -118,7 +143,7 @@
       align-items: center;
       justify-content: center;
       min-width: 84px;
-      height: 22px;
+      height: 24px;
       font-size: 0.6875rem;
       color: #FFFFFF;
       font-weight: 500;

@@ -55,7 +55,12 @@
   }
 
   .task-list__item {
-    padding: 6px 24px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      padding: 6px 24px;
+    }
   }
 
 </style>

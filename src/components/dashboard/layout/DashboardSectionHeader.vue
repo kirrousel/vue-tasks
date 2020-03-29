@@ -31,10 +31,14 @@
 <style>
 
   .dashboard-section-header {
-    padding: 16px 24px;
+    padding: 16px 10px;
     width: 100%;
     border-bottom: 1px solid #EBEFF2;
     box-sizing: border-box;
+
+    @media (--viewport-desktop) {
+      padding: 16px 24px;
+    }
   }
 
   .dashboard-section-header__box {
@@ -59,13 +63,22 @@
   }
 
   .dashboard-section-header__status-bar {
-    margin-top: 16px;
-    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+
+    @media (--viewport-tablet) {
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
   }
 
   .dashboard-section-header__calendar {
-    padding-top: 26px;
+    padding-top: 16px;
     box-sizing: border-box;
+
+    @media (--viewport-desktop) {
+      padding-top: 26px;
+    }
   }
 
 </style>

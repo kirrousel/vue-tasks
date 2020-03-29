@@ -7,6 +7,9 @@
     >
       <DashboardTask :task="item"/>
     </div>
+    <div class="task-list__button-wrapper">
+      <button class="task-list__button" type="button">Show more</button>
+    </div>
   </div>
 </template>
 
@@ -61,6 +64,21 @@
     @media (--viewport-tablet) {
       padding: 6px 24px;
     }
+  }
+
+  .task-list__button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+  }
+
+  .task-list__button {
+    height: 20px;
+    font-size: 0.8125rem;
+    color: #109CF1;
+    font-weight: 500;
   }
 
 </style>

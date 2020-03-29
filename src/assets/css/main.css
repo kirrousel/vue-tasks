@@ -28,3 +28,7 @@ body, html {
 .wrapper--header {
   max-width: 1366px;
 }
+
+.wrapper--catalog {
+  max-width: 1192px;
+}

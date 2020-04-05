@@ -5,24 +5,34 @@
         <h1 class="catalog-header__title">Мужские часы</h1>
       </div>
       <div class="catalog-header__item">
-        <p>сортировка</p>
+        <BaseSorting/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
+  import BaseSorting from "../base/BaseSorting";
 
+  export default {
+    components: {BaseSorting}
   }
 </script>
 
 <style scoped>
   .catalog-header__content {
     display: flex;
+    align-items: center;
   }
 
   .catalog-header__item--title {
     flex-grow: 1;
+  }
+
+  .catalog-header__title {
+    font-family: var(--font-catalog-secondary);
+    font-size: 2rem;
+    color: #1B1A17;
+    font-weight: normal;
   }
 </style>

@@ -19,6 +19,10 @@
   --dashboard-accent-blue: #109CF1;
   --dashboard-dark-blue: #334D6E;
   --dashboard-black: #192A3E;
+
+
+  --font-catalog-primary: 'Roboto', sans-serif;
+  --font-catalog-secondary: 'Playfair Display', sans-serif;
 }
 
 

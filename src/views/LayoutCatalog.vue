@@ -1,11 +1,23 @@
 <template>
   <div class="content">
-    <BaseHeader/>
-    <BaseBreadcrumbs/>
+    <div class="section section--header">
+      <BaseHeader/>
+    </div>
+    <div class="section section--breadcrumbs">
+      <BaseBreadcrumbs/>
+    </div>
+
     <router-view/>
-    <BaseSubscription/>
-    <MoreProducts/>
-    <BaseFooter/>
+
+    <div class="section section--subscription">
+      <BaseSubscription/>
+    </div>
+    <div class="section section--more-products">
+      <MoreProducts/>
+    </div>
+    <div class="section section--footer">
+      <BaseFooter/>
+    </div>
   </div>
 </template>
 
@@ -21,3 +33,13 @@ export default {
   components: {MoreProducts, BaseHeader, BaseBreadcrumbs, BaseSubscription, BaseFooter }
 }
 </script>
+
+<style scoped>
+  .section--header {
+    margin-top: 31px;
+    margin-bottom: 58px;
+  }
+
+  .section--breadcrumbs {
+    margin-bottom: 40px;}
+</style>

@@ -15,3 +15,23 @@
     opacity: 0.9;
   }
 }
+
+.catalog-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 185px;
+  min-height: 60px;
+  font-family: var(--font-catalog-primary);
+  font-size: 0.75rem;
+  color: #1D1A1A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid #E7E0CF;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

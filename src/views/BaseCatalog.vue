@@ -6,10 +6,30 @@
       </div>
       <div class="catalog__content">
         <div class="catalog__box catalog__box--filters">
-          <p>filters</p>
+          <div class="catalog__filter">
+            <CatalogFilters :brands="brands" :colors="colors" :materials="materials" :mechanisms="mechanisms"/>
+          </div>
         </div>
         <div class="catalog__box catalog__box--list">
-          <p>list</p>
+          <div class="catalog__list">
+            <div class="catalog__item" v-for="(item, index) in itemsFirstChunk" :key="index">
+              <CatalogItem
+                :img="item.img"
+                :price="item.price"
+              />
+            </div>
+
+            <div class="catalog__item">
+              <CatalogAd/>
+            </div>
+
+            <div class="catalog__item" v-for="(item, index) in itemsSecondChunk" :key="index">
+              <CatalogItem
+                :img="item.img"
+                :price="item.price"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -18,8 +38,78 @@
 
 <script>
   import CatalogHeader from '@/components/catalog/layout/CatalogHeader.vue';
+  import CatalogFilters from '@/components/catalog/filters/CatalogFilters.vue';
+  import CatalogItem from '@/components/catalog/CatalogItem.vue';
+  import CatalogAd from '@/components/catalog/CatalogAd.vue';
+
   export default {
-    components: { CatalogHeader }
+    components: {CatalogItem, CatalogFilters, CatalogHeader, CatalogAd },
+    data() {
+      return  {
+        brands: [
+          {value: 'Techne'},
+          {value: 'Rado'},
+          {value: 'Bvlgari'},
+          {value: 'Tissot'},
+          {value: 'Omega'},
+          {value: 'Montblanc'},
+        ],
+        mechanisms: [
+          {value: 'Механические'},
+          {value: 'Ручной завод'},
+          {value: 'Автоматический завод'},
+          {value: 'С автоматическим и ручным заводом'},
+          {value: 'Кварцевые'},
+          {value: 'Солнечная батарея'},
+          {value: 'Автокварцевые'}
+        ],
+        materials: [
+          {value: 'Сталь'},
+          {value: 'Сталь с PVD покрытием'},
+          {value: 'Сталь/керамика'},
+          {value: 'Сталь/золото'},
+          {value: 'Сталь/кожа'},
+          {value: 'Кожа'},
+          {value: 'Каучук'},
+          {value: 'Титан'},
+          {value: 'Нейлон'},
+          {value: 'Полимер'},
+          {value: 'Керамика'},
+          {value: 'Латунь'},
+        ],
+        colors: [
+          {value: 'Золотой'},
+          {value: 'Черный'},
+          {value: 'Комбинированный (сталь/золото)'},
+          {value: 'Белый'},
+          {value: 'Синий'},
+          {value: 'Зеленый'},
+          {value: 'Хаки'},
+          {value: 'Серый'},
+          {value: 'Коричневый'},
+          {value: 'Прозрачный'},
+          {value: 'Фиолетовый'},
+          {value: 'Красный'},
+          {value: 'Розовый'},
+        ],
+        itemsFirstChunk: [
+          {img: '1', price: '12 700'},
+          {img: '2', price: '12 700'},
+          {img: '3', price: '15 700'},
+          {img: '4', price: '16 000'},
+          {img: '5', price: '17 777'},
+        ],
+        itemsSecondChunk: [
+          {img: '6', price: '25 999'},
+          {img: '7', price: '100 000'},
+          {img: '8', price: '100 099'},
+          {img: '9', price: '101 101'},
+          {img: '10', price: '199 999'},
+          {img: '11', price: '399 099'},
+        ],
+
+      };
+    }
   }
 </script>
 
@@ -46,4 +136,22 @@
   .catalog__box--list {
     flex-grow: 1;
   }
+
+  .catalog__filter {
+    max-width: 230px;
+  }
+
+  .catalog__list {
+    margin: -20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .catalog__item {
+    display: flex;
+    width: 33.33%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
 </style>

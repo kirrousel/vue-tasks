@@ -12,24 +12,9 @@
         </div>
         <div class="catalog__box catalog__box--list">
           <div class="catalog__list">
-            <div class="catalog__item" v-for="(item, index) in itemsFirstChunk" :key="index">
-              <CatalogItem
-                :img="item.img"
-                :price="item.price"
-              />
-            </div>
-
-            <div class="catalog__item">
-              <CatalogAd/>
-            </div>
-
-            <div class="catalog__item" v-for="(item, index) in itemsSecondChunk" :key="index">
-              <CatalogItem
-                :img="item.img"
-                :price="item.price"
-              />
-            </div>
+            <CatalogList :items-first-chunk="itemsFirstChunk" :items-second-chunk="itemsSecondChunk"/>
           </div>
+          <CatalogPagination/>
         </div>
       </div>
     </div>
@@ -39,11 +24,11 @@
 <script>
   import CatalogHeader from '@/components/catalog/layout/CatalogHeader.vue';
   import CatalogFilters from '@/components/catalog/filters/CatalogFilters.vue';
-  import CatalogItem from '@/components/catalog/CatalogItem.vue';
-  import CatalogAd from '@/components/catalog/CatalogAd.vue';
+  import CatalogList from '@/components/catalog/list/CatalogList.vue';
+  import CatalogPagination from '@/components/catalog/CatalogPagination.vue';
 
   export default {
-    components: {CatalogItem, CatalogFilters, CatalogHeader, CatalogAd },
+    components: {CatalogPagination, CatalogList, CatalogFilters, CatalogHeader},
     data() {
       return  {
         brands: [
@@ -127,10 +112,13 @@
     margin-bottom: 40px;
   }
 
-  .catalog__box--filters {
-    flex: 323px 0 0;
+  .catalog__box {
     padding: 0 10px;
     box-sizing: border-box;
+  }
+
+  .catalog__box--filters {
+    flex: 323px 0 0;
   }
 
   .catalog__box--list {
@@ -142,16 +130,7 @@
   }
 
   .catalog__list {
-    margin: -20px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .catalog__item {
-    display: flex;
-    width: 33.33%;
-    padding: 20px;
-    box-sizing: border-box;
+    margin-bottom: 40px;
   }
 
 </style>

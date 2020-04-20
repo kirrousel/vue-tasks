@@ -35,3 +35,9 @@
     opacity: 0.8;
   }
 }
+
+.catalog-button--filled {
+  background-color: #31302C;
+  border: 2px solid #31302C;
+  color: #FFFFFF;
+}

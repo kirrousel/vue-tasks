@@ -3,6 +3,7 @@
     <div class="more-products__wrapper wrapper wrapper--catalog">
       <div class="more-products__header">
         <h3 class="more-products__title">Ремешки</h3>
+        <a class="more-products__link" href="#"> Смотреть все</a>
       </div>
       <div class="more-products__slider">
         <button type="button" class="more-products__button" @click="showPrev">
@@ -75,8 +76,33 @@
     padding: 80px 0;
   }
   .more-products__header {
-    margin-bottom: 57px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 52px;
   }
+
+  .more-products__title {
+    padding-bottom: 5px;
+    flex-grow: 1;
+    font-size: 2rem;
+    color: #1B1A17;
+    font-family: var(--font-catalog-secondary);
+  }
+  .more-products__link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #C4C0B6;
+    font-family: var(--font-catalog-primary);
+    color: #444240;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1;
+    box-sizing: border-box;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
   .more-products__slider {
     position: relative;
     margin: 0 -20px;

@@ -1,6 +1,6 @@
 <template>
   <div class="catalog-list">
-    <div class="catalog-list__item" v-for="(item, index) in itemsFirstChunk" :key="index">
+    <div class="catalog-list__item" v-for="(item, index) in itemsFirstChunk" :key="item.img">
       <CatalogListItem
         :img="item.img"
         :price="item.price"
@@ -11,7 +11,7 @@
       <CatalogListAd/>
     </div>
 
-    <div class="catalog-list__item" v-for="(item, index) in itemsSecondChunk" :key="index">
+    <div class="catalog-list__item" v-for="(item, index) in itemsSecondChunk" :key="item.img">
       <CatalogListItem
         :img="item.img"
         :price="item.price"

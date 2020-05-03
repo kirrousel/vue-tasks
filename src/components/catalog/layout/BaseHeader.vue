@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header__wrapper wrapper wrapper--catalog">
       <div class="header__content">
-        <div class="header__box">
+        <div class="header__box header__box--logo">
           <BaseLogo/>
         </div>
         <div class="header__box header__box--nav">
@@ -26,6 +26,10 @@
             <svg class="header__ico">
               <use href="#catalog-cart"></use>
             </svg>
+          </button>
+
+          <button class="header__button header__button--menu" type="button">
+            <i class="header__menu-ico"></i>
           </button>
         </div>
       </div>
@@ -55,10 +59,22 @@
     box-sizing: border-box;
   }
 
+  .header__box--logo {
+    flex: 1;
+
+    @media (--viewport-tablet) {
+      flex: initial;
+    }
+  }
+
   .header__box--nav {
+    display: none;
     flex-grow: 1;
-    display: flex;
     justify-content: center;
+
+    @media (--viewport-tablet) {
+      display: flex;
+    }
   }
 
   .header__button {
@@ -92,6 +108,38 @@
     border-radius: 50%;
     z-index: 1;
     font-family: var(--font-catalog-primary);
+  }
+
+  .header__menu-ico {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 13px;
+    height: 2px;
+    background-color: #E6C8B4;
+
+    @media (--viewport-tablet) {
+      display: none;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+      left: 0;
+    }
+
+    &:before {
+      top: -5px;
+    }
+
+    &:after {
+      bottom: -5px;
+    }
+  ;
   }
 
 </style>

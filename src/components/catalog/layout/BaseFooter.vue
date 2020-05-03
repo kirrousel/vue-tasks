@@ -77,23 +77,35 @@
 
 <style scoped>
   .footer {
-    padding: 67px 0;
+    padding: 32px 0;
     background-color: #444240;
     color: rgba(255, 255, 255, 0.75);
+
+    @media (--viewport-tablet) {
+      padding: 67px 0;
+    }
   }
 
   .footer__content {
     display: flex;
+    flex-wrap: wrap;
     margin: 0 -8px;
   }
 
   .footer__box {
+    margin-bottom: 32px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 50%;
     padding: 0 8px;
-    width: 25%;
     box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 0;
+      padding: 0 8px;
+      width: 25%;
+      align-items: center;
+    }
   }
 
   .footer__box--main {

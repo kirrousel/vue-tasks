@@ -1,6 +1,7 @@
 /* VIEWPORTS */
 @custom-media --viewport-tablet (width >= 48rem); /*768 px*/
 @custom-media --viewport-desktop (width >= 64rem); /*1024 px*/
+@custom-media --viewport-big-desktop (width >= 81.25rem); /* 1300 px*/
 
 
 

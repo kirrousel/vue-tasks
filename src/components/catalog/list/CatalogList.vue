@@ -35,16 +35,29 @@
 <style scoped>
 
   .catalog-list {
-    margin: -20px;
-    display: flex;
-    flex-wrap: wrap;
+
+    @media (--viewport-tablet) {
+      margin: -20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   .catalog-list__item {
-    display: flex;
-    width: 33.33%;
-    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
     box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 0;
+      display: flex;
+      width: 50%;
+      padding: 20px;
+    }
+
+    @media (--viewport-desktop) {
+      width: 33.33%;
+    }
   }
 
 </style>

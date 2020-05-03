@@ -1,10 +1,10 @@
 <template>
   <label class="sorting">
-    <span class="sorting__text">Сортировать по:</span>
+    <span class="sorting__text">Сортировать:</span>
     <select class="sorting__select">
-      <option class="sorting__option" selected>популярности</option>
-      <option class="sorting__option">цене</option>
-      <option class="sorting__option">отзывам</option>
+      <option class="sorting__option" selected>По популярности</option>
+      <option class="sorting__option">По цене</option>
+      <option class="sorting__option">По отзывам</option>
     </select>
   </label>
 </template>
@@ -18,6 +18,8 @@
 <style scoped>
   .sorting {
     position: relative;
+    display: flex;
+    align-items: center;
     padding-right: 19px;
     box-sizing: border-box;
 
@@ -30,17 +32,22 @@
       height: 5px;
       width: 5px;
       right: 0;
+      top: 4px;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%) rotate(135deg);
+      transform: rotate(135deg);
       transform-origin: center;
     }
   }
 
   .sorting__text {
+    display: none;
     margin-right: 5px;
     font-size: 0.875rem;
     color: #BDB9B5;
+
+    @media (--viewport-tablet) {
+      display: inline-block;
+    }
 
   }
 

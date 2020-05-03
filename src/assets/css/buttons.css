@@ -20,8 +20,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 185px;
-  min-height: 60px;
+  padding: 0 8px;
+  min-width: 100px;
+  min-height: 30px;
   font-family: var(--font-catalog-primary);
   font-size: 0.75rem;
   color: #1D1A1A;
@@ -30,6 +31,11 @@
   border: 2px solid #E7E0CF;
   box-sizing: border-box;
   cursor: pointer;
+
+  @media (--viewport-tablet) {
+    min-width: 185px;
+    min-height: 60px;
+  }
 
   &:hover {
     opacity: 0.8;

@@ -36,10 +36,20 @@ export default {
 
 <style scoped>
   .section--header {
-    margin-top: 31px;
-    margin-bottom: 58px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @media (--viewport-tablet) {
+      margin-top: 31px;
+      margin-bottom: 58px;
+    }
   }
 
   .section--breadcrumbs {
-    margin-bottom: 40px;}
+    margin-bottom: 20px;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 40px;
+    }
+  }
 </style>

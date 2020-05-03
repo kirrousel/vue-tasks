@@ -6,11 +6,18 @@
         <a class="more-products__link" href="#"> Смотреть все</a>
       </div>
       <div class="more-products__slider">
-        <button type="button" class="more-products__button" @click="showPrev">
-          <svg class="more-products__button-ico">
-            <use href="#catalog-chevron-left"></use>
-          </svg>
-        </button>
+        <div class="more-products__actions">
+          <button type="button" class="more-products__button" @click="showPrev">
+            <svg class="more-products__button-ico">
+              <use href="#catalog-chevron-left"></use>
+            </svg>
+          </button>
+          <button type="button" class="more-products__button more-products__button--next" @click="showNext">
+            <svg class="more-products__button-ico">
+              <use href="#catalog-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
 
         <VueSlickCarousel v-bind="settings" ref="carousel">
 
@@ -24,11 +31,7 @@
           </div>
 
         </VueSlickCarousel>
-        <button type="button" class="more-products__button more-products__button--next" @click="showNext">
-          <svg class="more-products__button-ico">
-            <use href="#catalog-chevron-right"></use>
-          </svg>
-        </button>
+
       </div>
     </div>
   </div>
@@ -47,6 +50,20 @@
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+          ]
         },
         moreItemList: [
           {img: 'more_1', price: '6 500', title: 'GEORG JENSEN'},
@@ -78,7 +95,11 @@
   .more-products__header {
     display: flex;
     align-items: center;
-    margin-bottom: 52px;
+    margin-bottom: 16px;
+
+    @media (--viewport-tablet) {
+      margin-bottom: 52px;
+    }
   }
 
   .more-products__title {
@@ -88,6 +109,7 @@
     color: #1B1A17;
     font-family: var(--font-catalog-secondary);
   }
+
   .more-products__link {
     padding-bottom: 5px;
     border-bottom: 1px solid #C4C0B6;
@@ -105,23 +127,52 @@
 
   .more-products__slider {
     position: relative;
-    margin: 0 -20px;
+
+    @media (--viewport-tablet) {
+      margin: 0 -20px;
+    }
   }
 
   .more-products__item {
-    padding: 0 20px;
     display: inline-block;
     height: 100%;
     box-sizing: border-box;
+
+    @media (--viewport-tablet) {
+      padding: 0 20px;
+    }
+  }
+
+  .more-products__actions {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (--viewport-tablet) {
+      padding: 0 20px;
+    }
+
+    @media (--viewport-big-desktop) {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   .more-products__button {
-    position: absolute;
-    top: 50%;
-    left: -23px;
-    transform: translateY(-50%);
-    width: 23px;
-    height: 23px;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #C4C0B6;
+
+    @media (--viewport-big-desktop) {
+      left: -23px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 23px;
+      height: 23px;
+      border: none;
+    }
   }
 
   .more-products__button-ico {
@@ -135,7 +186,13 @@
   }
 
   .more-products__button--next {
-    left: 100%;
+    margin-left: 32px;
+    @media (--viewport-big-desktop) {
+      margin-left: 0;
+      left: 100%;
+    }
   }
+
+
 
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div class="catalog-list-ad">
+  <a class="catalog-list-ad">
     <img class="catalog-list-ad__img" src="/img/watches/watch-ad.png" alt="watch ad">
     <div class="catalog-list-ad__content">
       <p class="catalog-list-ad__text catalog-list-ad__text--number">-20%</p>
       <p class="catalog-list-ad__text">НА ВТОРУЮ ПОЗИЦИЮ В ЧЕКЕ</p>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -27,7 +27,7 @@
   }
 
   .catalog-list-ad__text {
-    max-width: 112px;
+    max-width: 200px;
     font-family: var(--font-catalog-secondary);
     font-size: 1rem;
     font-weight: bold;
@@ -36,6 +36,11 @@
     letter-spacing: 0.03em;
     color: #FFFFFF;
     text-transform: uppercase;
+
+    @media (--viewport-tablet) {
+      max-width: 112px;
+      font-size: 1rem;
+    }
   }
 
   .catalog-list-ad__text--number {
